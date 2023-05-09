@@ -31,9 +31,14 @@ public class MedicoController {
 
     @PutMapping
     @Transactional
-    public void atualizacao(@RequestBody @Valid DadosAtualizacaoMed dados){
+    public void atualizacao(@RequestBody @Valid DadosAtualizacaoMed dados) {
         var medico = repository.getReferenceById(dados.id());
         medico.atualizacaoInformacoes(dados);
+    }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void exclusao(@PathVariable Long id){
+        repository.deleteById(id);
     }
 }
