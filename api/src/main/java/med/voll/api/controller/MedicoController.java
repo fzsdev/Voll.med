@@ -1,21 +1,17 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.medico.DadosCadastroMed;
-import med.voll.api.medico.DadosListagemMed;
-import med.voll.api.medico.Medico;
-import med.voll.api.medico.MedicoRepository;
+import med.voll.api.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("medicos")
-public class MedicosController {
+public class MedicoController {
 
     @Autowired
     private MedicoRepository repository;
@@ -24,12 +20,20 @@ public class MedicosController {
     @Transactional
     public void cadastro(@RequestBody @Valid DadosCadastroMed dados) {
         /*repository.save(new Medico(null, dados.nome(), dados.email(), dados.crm(), new Endereco(dados))); tem um metodo
-        * mais facil de receber os dados*/
+         * mais facil de receber os dados*/
         repository.save(new Medico(dados));
     }
 
     @GetMapping
-    public Page<DadosListagemMed> listagem(Pageable paginacao) {
+    public Page<DadosListagemMed> listagem(@PageableDefault(size = 10, sort = {"id"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemMed::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizacao(@RequestBody @Valid DadosAtualizacaoMed dados){
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizacaoInformacoes(dados);
+
     }
 }

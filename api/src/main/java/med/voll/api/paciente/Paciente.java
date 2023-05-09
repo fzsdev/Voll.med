@@ -15,9 +15,9 @@ import med.voll.api.endereco.Endereco;
 @Table(name = "pacientes")
 public class Paciente {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
     private String email;
     private String cpf;
