@@ -1,6 +1,6 @@
 # PROJETO ESTUDO SPRING BOOT (CRUD)
 
-## Estudo de Spring Boot baseado no curso da plataforma Alura 
+## Estudo de Spring Boot baseado no curso da plataforma Alura
 
 #### Ferramentas e start no projeto:
 
@@ -10,14 +10,17 @@
 - DBeaver
 - Insomnia
 * Ambiente desenvolvimento: Windows 10 com WSL2 (Ubuntu 20.04.6 LTS)
+------------
+#### Start:
 
 Para iniciar, baixar dependências do projeto pelo Maven (arquivo `pom.xml`), utilizar MySQL ver 8, e ferramentas
-de acesso ao banco de dados pelo DBeaver e Insomnia. 
+de acesso ao banco de dados pelo DBeaver e Insomnia.
 Criar e configurar o banco de dados como `vollmed_api`
 Inicializar o `MySQL` antes de rodar o `ApiApplication.java`.
+
 -------------
 
-### Resumo:
+#### Resumo:
 
 - Utilização Spring Boot versão 3, estudo de CRUD em API Rest;
 - Foi utilizado o `Spring Initializr` para iniciar com as dependências: "WEB, Validation, Spring Data JPA e Lombok";
