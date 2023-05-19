@@ -13,6 +13,7 @@ import med.voll.api.endereco.Endereco;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+
 public class Medico {
 
     @Id

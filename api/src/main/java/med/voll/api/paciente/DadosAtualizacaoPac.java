@@ -9,13 +9,9 @@ import med.voll.api.endereco.DadosEndereco;
 public record DadosAtualizacaoPac(
         @NotNull
         Long id,
-        @NotBlank
         String nome,
-        @NotBlank @Email
         String email,
-        @NotBlank String telefone,
-        @NotNull
-        @Valid
+        String telefone,
         DadosEndereco endereco
 ) {
 }

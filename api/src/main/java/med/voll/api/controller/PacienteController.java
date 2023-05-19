@@ -23,13 +23,13 @@ public class PacienteController {
     }
 
     @GetMapping
-    public Page<DadosListagemPac> listar(@PageableDefault(page = 0, size = 10, sort = { "nome" }) Pageable paginacao) {
-        return PacienteRepository.findAllByAtivoTrue(paginacao).map(DadosListagemPac::new);
+    public Page<DadosListagemPac> listagem(@PageableDefault(size = 10, sort = {"id"}) Pageable paginacao) {
+        return repository.findAll(paginacao).map(DadosListagemPac::new);
     }
 
     @PutMapping
     @Transactional
-    public void atualizar(@RequestBody @Valid DadosAtualizacaoPac dados) {
+    public void atualizacao(@RequestBody @Valid DadosAtualizacaoPac dados) {
         var paciente = repository.getReferenceById(dados.id());
         paciente.atualizarInformacoes(dados);
     }
@@ -40,8 +40,6 @@ public class PacienteController {
         var paciente = repository.getReferenceById(id);
         paciente.excluir();
     }
-
-
 }
 
 

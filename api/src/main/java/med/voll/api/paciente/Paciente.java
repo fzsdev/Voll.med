@@ -7,12 +7,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.endereco.Endereco;
 
-@Getter
-@EqualsAndHashCode(of = "id")
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "Paciente")
 @Table(name = "pacientes")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Paciente {
 
     @Id
@@ -25,6 +25,7 @@ public class Paciente {
 
     @Embedded
     private Endereco endereco;
+
     private boolean ativo;
 
     public Paciente(DadosCadastroPaciente dados) {
@@ -50,3 +51,5 @@ public class Paciente {
         this.ativo = false;
     }
 }
+
+
