@@ -23,7 +23,7 @@ Inicializar o `MySQL` antes de rodar o `ApiApplication.java`.
 #### Resumo:
 
 - Utilização Spring Boot versão 3, estudo de CRUD em API Rest;
-- Foi utilizado o <a href="https://start.spring.io/">`Spring Initializr`</a> para iniciar com as dependências: "WEB, Validation, Spring Data JPA e Lombok";
+- Foi utilizado o <a href="https://start.spring.io/" target="_blank">`Spring Initializr`</a> para iniciar com as dependências: "WEB, Validation, Spring Data JPA e Lombok";
 - Driver Spring: MySQL e Flyway;
 - O lombok foi utilizado na criação dos `Getters` e `Setters` com anotações Spring;
 - As configurações foram feitas no arquivo `application.properties` localizado na pasta `resources`;
