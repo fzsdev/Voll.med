@@ -1,6 +1,6 @@
 # PROJETO ESTUDO SPRING BOOT (CRUD)
 
-## Estudo de Spring Boot baseado no curso da plataforma Alura
+## Estudo de Spring Boot baseado no curso da plataforma Alura.
 
 #### Ferramentas e start no projeto:
 
