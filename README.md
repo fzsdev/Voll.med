@@ -4,7 +4,7 @@
 
 #### Ferramentas e start no projeto:
 
-- Spring Boot (ver 3.0.6)
+- Spring Boot (ver 3.0.7) - Dependencies : pom.xml (api)
 - JAVA SDK 17 Oracle
 - MySQL (Ver 8.0.32)
 - DBeaver
