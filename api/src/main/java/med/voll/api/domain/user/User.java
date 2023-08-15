@@ -31,7 +31,7 @@ public class User implements UserDetails {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
