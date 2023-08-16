@@ -21,7 +21,8 @@ public class MedicoController {
     @PostMapping
     @Transactional
     public ResponseEntity cadastro(@RequestBody @Valid DadosCadastroMed dados, UriComponentsBuilder uriBuilder) {
-        /*repository.save(new Medico(null, dados.nome(), dados.email(), dados.crm(), new Endereco(dados))); tem um metodo
+        /*repository.save(new Medico(null, dados.nome(), dados.email(), dados.crm(), new Endereco(dados))); tem um
+        metodo
          * mais facil de receber os dados*/
         var medico = new Medico(dados);
         repository.save(medico);
