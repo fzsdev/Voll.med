@@ -1,0 +1,29 @@
+_id: req_e800039f7f4643c6bac563bfea2fb182
+type: Request
+parentId: wrk_d5173d010f5744289f5d42ba01061928
+modified: 1692131401139
+created: 1687559521320
+url: http://localhost:8080/login
+name: Efetuar Login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"login": "al.berto@voll.med",
+    	"password": "123456"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687559521320
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

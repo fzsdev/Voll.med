@@ -1,0 +1,29 @@
+_id: req_a77fe91edf644f22b76acbfcd6f29cc3
+type: Request
+parentId: wrk_d5173d010f5744289f5d42ba01061928
+modified: 1692135029737
+created: 1692135011271
+url: http://localhost:8080/login
+name: Login teste FellaDev
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"login": "fella.dev@voll.med",
+    	"password": "Fella_VollMedAPI"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1686216917231.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_3abd98c88efc44bba36ad12a9012498f
+type: Request
+parentId: wrk_d5173d010f5744289f5d42ba01061928
+modified: 1684530739186
+created: 1683660584642
+url: http://localhost:8080/pacientes
+name: Lista Pacientes
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 100
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

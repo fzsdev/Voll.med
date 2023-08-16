@@ -1,0 +1,29 @@
+_id: req_8eef7e4c5d1e483a9e5ffef8b6482092
+type: Request
+parentId: wrk_d5173d010f5744289f5d42ba01061928
+modified: 1684530739186
+created: 1684530338989
+url: http://localhost:8080/pacientes
+name: Atualizar Paciente
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id": 2,
+    	"nome" : "Isabela Azevedo Soares"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 500
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

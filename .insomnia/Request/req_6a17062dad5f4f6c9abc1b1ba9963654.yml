@@ -1,0 +1,21 @@
+_id: req_6a17062dad5f4f6c9abc1b1ba9963654
+type: Request
+parentId: wrk_d5173d010f5744289f5d42ba01061928
+modified: 1687480527097
+created: 1684876102151
+url: http://localhost:8080/medicos/1
+name: Detalhar Médico
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1683122184172
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
