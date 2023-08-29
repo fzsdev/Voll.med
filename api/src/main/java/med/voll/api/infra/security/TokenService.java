@@ -46,7 +46,15 @@ public class TokenService {
         }
     }
 
+            /*private Instant dataExpiracao() {
+            return null;
+             }*/
+
+
     private Instant dataExpiracao() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(24).toInstant(ZoneOffset.of("-03:00"));
+        /*
+        plusHours(2) é o original, 24hrs é mais facil para estudo, ou usar `return null` para não expirar
+        */
     }
 }

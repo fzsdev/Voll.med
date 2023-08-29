@@ -31,7 +31,7 @@ public class MedicoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DadosListagemMed>> listagem(@PageableDefault(size = 10, sort = {"id"}) Pageable paginacao) {
+    public ResponseEntity<Page<DadosListagemMed>> listagem(@PageableDefault(size = 50, sort = {"id"}) Pageable paginacao) {
         //return repository.findAll(paginacao).map(DadosListagemMed::new);
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemMed::new);
         return ResponseEntity.ok(page);
