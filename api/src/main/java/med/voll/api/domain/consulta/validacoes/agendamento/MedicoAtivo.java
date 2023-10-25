@@ -1,14 +1,19 @@
-package med.voll.api.domain.consulta.validacoes;
+package med.voll.api.domain.consulta.validacoes.agendamento;
 
 import med.voll.api.domain.ValidacaoException;
 import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
+import med.voll.api.domain.consulta.validacoes.agendamento.ValidadorAgendamentoConsulta;
 import med.voll.api.domain.medico.MedicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class MedicoAtivo {
+@Component
+public class MedicoAtivo implements ValidadorAgendamentoConsulta {
 
+    @Autowired
     private MedicoRepository repository;
 
-    public void validarMedico(DadosAgendamentoConsulta dados) {
+    public void validar(DadosAgendamentoConsulta dados) {
         if (dados.idMedico() == null) {
             return;
         }
