@@ -41,4 +41,17 @@ Inicializar o `MySQL` antes de rodar o `ApiApplication.java`.
 - Controle de acesso com implementação da biblioteca `Auth0 java-jwt` utilizando tokens JWT com hash `BCrypt`.
 
 ---
+Documentação pelo SpringDocs (Swagger UI): <br>
+
+Para gerar a documentação automatica do projeto, foi utilizado uma lib do `Spring`
+chamado <a href="https://springdoc.org/" target="_blank">`SpringDoc (link)`</a>, funciona
+examinando a aplicação em tempo de execução para inferir a semântica da API com base nas configurações do Spring,
+estrutura de classes e várias anotações.
+
+- <a href="http://localhost:8080/swagger-ui/index.html" target="_blank">`Doc VollMed API - HTML`</a> <br>
+- <a href="http://localhost:8080/v3/api-docs" target="_blank">`Doc VollMed API - JSON`</a>
+
+* Acesso à documentação precisa ser feito localmente, com o projeto rodando.
+
+---
 Em atualização.
