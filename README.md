@@ -51,7 +51,7 @@ estrutura de classes e várias anotações.
 - <a href="http://localhost:8080/swagger-ui/index.html" target="_blank">`Doc VollMed API - HTML`</a> <br>
 - <a href="http://localhost:8080/v3/api-docs" target="_blank">`Doc VollMed API - JSON`</a>
 
-* Acesso à documentação precisa ser feito localmente, com o projeto rodando.
+*Acesso à documentação precisa ser feito localmente, com o projeto rodando.
 
 ---
 Em atualização.
