@@ -44,7 +44,7 @@ public class AgendaConsultas {
         if (medico == null){
             throw new ValidacaoException("Nenhum médico disponivel.");
         }
-        var consulta = new Consulta(null, medico, paciente, dados.data(), null);
+        var consulta = new Consulta(medico, paciente, dados.data());
         consultaRepository.save(consulta);
 
         return new DadosDetalhamentoConsulta(consulta);
