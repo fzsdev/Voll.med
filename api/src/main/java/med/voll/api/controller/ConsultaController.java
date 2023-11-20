@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/consultas")
 @SecurityRequirement(name = "bearer-key")
 public class ConsultaController {
+
     @Autowired
     private AgendaConsultas agenda;
 
