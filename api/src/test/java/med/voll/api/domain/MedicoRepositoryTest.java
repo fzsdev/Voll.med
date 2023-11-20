@@ -1,7 +1,11 @@
-package med.voll.api.domain.medico;
+package med.voll.api.domain;
 
 import med.voll.api.domain.consulta.Consulta;
 import med.voll.api.domain.endereco.DadosEndereco;
+import med.voll.api.domain.medico.DadosCadastroMed;
+import med.voll.api.domain.medico.Especialidade;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.medico.MedicoRepository;
 import med.voll.api.domain.paciente.DadosCadastroPaciente;
 import med.voll.api.domain.paciente.Paciente;
 import org.junit.jupiter.api.DisplayName;
@@ -30,42 +34,43 @@ class MedicoRepositoryTest {
     @Autowired
     private TestEntityManager em;
 
+    @Test
+    @DisplayName("Deveria devolver null quando unico medico cadastrado nao esta disponivel na data")
+    void escolherMedicoAleatorioLivreNaDataCenario1() {
+        //given ou arrange
+        var proximaSegundaAs10 = LocalDate.now()
+                .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+                .atTime(10, 0);
+        var medico = cadastrarMedico("Medico", "medico@voll.med", "123456", Especialidade.CARDIOLOGIA);
+        var paciente = cadastrarPaciente("Paciente", "paciente@email.com", "00000000000");
+        cadastrarConsulta(medico, paciente, proximaSegundaAs10);
+
+        //when ou act
+        var medicoLivre = medicoRepository.escolherMedicoAleatorioLivre(Especialidade.CARDIOLOGIA, proximaSegundaAs10);
+
+        //then ou assert
+        assertThat(medicoLivre).isNull();
+    }
 
     @Test
-    @DisplayName("Deveria retornar null quando unico médico não está disponivel na data")
-    void escolherMedicoAleatorioLivreC1() {
+    @DisplayName("Deveria devolver medico quando ele estiver disponivel na data")
+    void escolherMedicoAleatorioLivreNaDataCenario2() {
+        //given ou arrange
+        var proximaSegundaAs10 = LocalDate.now()
+                .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+                .atTime(10, 0);
+        var medico = cadastrarMedico("Medico", "medico@voll.med", "123456", Especialidade.CARDIOLOGIA);
 
-        var proximaTercaAs10 = LocalDate.now()
-                .with(TemporalAdjusters.next(DayOfWeek.TUESDAY))
-                .atTime(10, 00);
-        var medico = cadastrarMedico("Med1", "med1@voll.med", "123456", Especialidade.ORTOPEDIA);
-        var paciente = cadastrarPaciente("Pac1", "pac1@gmail.com", "000010010000");
+        //when ou act
+        var medicoLivre = medicoRepository.escolherMedicoAleatorioLivre(Especialidade.CARDIOLOGIA, proximaSegundaAs10);
 
-        cadastrarConsulta(medico, paciente, proximaTercaAs10);
-
-
-        var medicoLivre = medicoRepository.escolherMedicoAleatorioLivre(Especialidade.ORTOPEDIA, proximaTercaAs10);
+        //then ou assert
         assertThat(medicoLivre).isEqualTo(medico);
     }
 
-
-   /* private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
-        em.persist(new Consulta(medico, paciente, data));
-    }*/
-
-    /**
-     *
-     */
     private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
-        if (data != null) {
-            em.persist(new Consulta(medico, paciente, data));
-        } else {
-            // Trate o caso em que data é nulo.
-            // Você pode lançar uma exceção, registrar um aviso, etc.
-            throw new IllegalArgumentException("A data da consulta não pode ser nula.");
-        }
+        em.persist(new Consulta(null, medico, paciente, data, null));
     }
-
 
     private Medico cadastrarMedico(String nome, String email, String crm, Especialidade especialidade) {
         var medico = new Medico(dadosMedico(nome, email, crm, especialidade));
@@ -105,11 +110,12 @@ class MedicoRepositoryTest {
                 "rua xpto",
                 "bairro",
                 "00000000",
-                "Brasília",
+                "Brasilia",
                 "DF",
                 null,
                 null
         );
     }
+
 
 }

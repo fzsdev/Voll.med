@@ -10,7 +10,7 @@
 - DBeaver
 - Insomnia
 
-* Ambiente desenvolvimento: Windows 10 com WSL2 (Ubuntu 20.04.6 LTS)
+*Ambiente desenvolvimento: Windows 10 com WSL2 (Ubuntu 20.04.6 LTS)
 
 ------------
 
@@ -41,6 +41,7 @@ Inicializar o `MySQL` antes de rodar o `ApiApplication.java`.
 - Controle de acesso com implementação da biblioteca `Auth0 java-jwt` utilizando tokens JWT com hash `BCrypt`.
 
 ---
+
 ### Documentação pelo SpringDocs (Swagger UI): <br>
 
 Para gerar a documentação automatica do projeto, foi utilizado uma lib do `Spring`
@@ -54,10 +55,32 @@ estrutura de classes e várias anotações.
 *Acesso à documentação precisa ser feito localmente, com o projeto rodando.
 
 ---
+
 ### Testes do Spring:
 
 - Controller ➡ API
 - Repository ➡ Queries
 
 ---
-Em atualização.
+
+### Build via Maven:
+
+- Foi gerado um arquivo `.jar` utilizando o Maven, localizado na raiz da pasta `/target` com nome de `api-0.0.
+  1-SNAPSHOT.jar`, já
+  utilizando configurações de ambientes proprias para colocar em produção e não expor dados sensiveis.
+
+---
+
+### Conclusão:
+
+- Criar uma API do zero com o Spring usando o `Spring Initializr`;
+- Implementar nossas primeiras funcionalidades, um `controller`, um `repository`;
+- Usar o `Flyway`;
+- Fazer o `CRUD` da nossa aplicação;
+- Fazer a validação com o` Bean Validation`;
+- Usar as `migrations` para controlar o histórico de evolução do banco de dados;
+- Aplicar testes automatizados.
+
+---
+
+*Falta somente subir em um servidor 😁.
