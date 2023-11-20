@@ -37,7 +37,7 @@ class MedicoRepositoryTest {
 
         var proximaTercaAs10 = LocalDate.now()
                 .with(TemporalAdjusters.next(DayOfWeek.TUESDAY))
-                .atTime(10, 0);
+                .atTime(10, 00);
         var medico = cadastrarMedico("Med1", "med1@voll.med", "123456", Especialidade.ORTOPEDIA);
         var paciente = cadastrarPaciente("Pac1", "pac1@gmail.com", "000010010000");
 
@@ -48,9 +48,24 @@ class MedicoRepositoryTest {
         assertThat(medicoLivre).isEqualTo(medico);
     }
 
-    private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
+
+   /* private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
         em.persist(new Consulta(medico, paciente, data));
+    }*/
+
+    /**
+     *
+     */
+    private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
+        if (data != null) {
+            em.persist(new Consulta(medico, paciente, data));
+        } else {
+            // Trate o caso em que data é nulo.
+            // Você pode lançar uma exceção, registrar um aviso, etc.
+            throw new IllegalArgumentException("A data da consulta não pode ser nula.");
+        }
     }
+
 
     private Medico cadastrarMedico(String nome, String email, String crm, Especialidade especialidade) {
         var medico = new Medico(dadosMedico(nome, email, crm, especialidade));
@@ -90,7 +105,7 @@ class MedicoRepositoryTest {
                 "rua xpto",
                 "bairro",
                 "00000000",
-                "Brasilia",
+                "Brasília",
                 "DF",
                 null,
                 null
